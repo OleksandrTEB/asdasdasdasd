@@ -107,7 +107,7 @@ const films = [
 
 function createCard(film) {
     const card = document.createElement('div')
-    card.classList.add('card', 'yes')
+    card.classList.add('card')
     cards_container.appendChild(card)
 
     const content = document.createElement('div')
@@ -131,7 +131,7 @@ function createCard(film) {
     h2.textContent = film.title
     title.appendChild(h2)
     const h3 = document.createElement('h3')
-    h3.textContent = film.title
+    h3.textContent = film.originalTitle
     title.appendChild(h3)
 
     const user_data = document.createElement('div')
@@ -150,8 +150,11 @@ function createCard(film) {
     input.type = 'checkbox'
     input.name = 'watched'
     input.id = 'watched'
-    input.textContent = 'Oznacz jako obejrzany'
     label.appendChild(input)
+
+    const span_text = document.createElement('span')
+    span_text.textContent = 'Oznacz jako obejrzany'
+    label.appendChild(span_text)
 
     const ocena_span = document.createElement('span')
     ocena_span.textContent = `⭐ ${film.rating}`
@@ -171,7 +174,7 @@ function createCard(film) {
     footer.appendChild(year_span)
 
     const rating_span = document.createElement('span')
-    rating_span.textContent = film.rating
+    rating_span.textContent = `⭐ ${film.rating}`
     footer.appendChild(rating_span)
 }
 
